@@ -7,7 +7,6 @@ from libs import datetime_formatter as dtf
 
 SPECIFIC_DOCKET_API = "https://www.courtlistener.com/api/rest/v4/dockets/"
 JSON_RESPONSE_DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%S.%f%z"
-BASE_DOCKET_URL = "https://www.courtlistener.com/"
 
 class DocketRequest:
     def __init__(self, docket_url, token):
@@ -22,10 +21,10 @@ class DocketRequest:
         }
 
     def _docket_id(self):
-        path = self.docket_url.strip(BASE_DOCKET_URL)  # Removes the base part directly from the URL
+        url = urlparse(self.docket_url)
+        path = url.path.strip('/')        
         path_pieces = path.split('/')
-        # ??? check!
-        if len(path_pieces) < 1 or path_pieces[0] != "docket": 
+        if len(path_pieces) < 2 or path_pieces[0] != "docket": 
             raise Exception(f"Docket id missing in url dummy: {self.docket_url}")
         docket_id = path_pieces[1]
         if not docket_id.isdigit(): # make sure the docket id is a number
@@ -69,6 +68,3 @@ class DocketRequest:
         self.load_json()
         date_modified = self.json.get("date_modified", "Not Found")
         return self.format_dt_str(date_modified)
-        
-    
-    
