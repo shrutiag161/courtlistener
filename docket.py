@@ -91,7 +91,7 @@ class Docket:
     #     count = self.count()
     #     return count/20
     
-    def get_entries(self):
+    def entries(self):
         all_entries = []
         self._load_docket_json(api_type="entries")
         recent_entries_json = self.docket_entries_json

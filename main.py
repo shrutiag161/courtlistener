@@ -32,9 +32,10 @@ def main():
         docket = get_docket(url, api_token)
         print(f"Case: {docket.case_name()}")
         print(f"Last Updated: {docket.date_modified()}\n")
-        # entries = docket.get_entries()     
-        # with open("results.json", 'w') as tempjson:
-        #     json.dump(entries, tempjson, indent=4)
+        entries = docket.entries()
+        entries_dict = {"entries": entries}   
+        with open("results.json", 'w') as tempjson:
+            json.dump(entries_dict, tempjson, indent=4)
 
 if __name__ == "__main__":
     main()
