@@ -15,27 +15,34 @@ def read_input_files():
         api_token = fr.read_file_as_string(TOKEN_FILE, allow_empty_file=False)
         return docket_urls, api_token
     except Exception as e:
-        logging.error(f"{e}")
+        # logging.error(f"{e}")
         sys.exit(1)
 
 def get_docket(docket_url, api_token):
     print(f"Docket: {docket_url}")
-    try:
-        docket = d.Docket(docket_url, api_token)
-        return docket
-    except Exception as e:
-        logging.error(f"{e}", exc_info=True)
+    # try:
+    docket = d.Docket(docket_url, api_token)
+    return docket
+    # except Exception as e:
+    #     logging.error(f"{e}", exc_info=True)
+
+def write_to_json(**docket_info):
+    if "id" not in docket_info:
+        raise ValueError("No docket id!!")
+    with open(f"{docket_info['id']}.json", 'w') as tempjson:
+        json.dump(docket_info, tempjson, indent=4)
 
 def main():
     docket_urls, api_token = read_input_files()
     for url in docket_urls:
         docket = get_docket(url, api_token)
-        print(f"Case: {docket.case_name()}")
-        print(f"Last Updated: {docket.date_modified()}\n")
-        entries = docket.entries()
-        entries_dict = {"entries": entries}   
-        with open("results.json", 'w') as tempjson:
-            json.dump(entries_dict, tempjson, indent=4)
+        docket_info = {
+            "id": docket.id(),
+            "case_name": docket.case_name(), 
+            "last_updated": docket.date_modified(), 
+            "entries": docket.entries()
+        }
+        write_to_json(**docket_info)
 
 if __name__ == "__main__":
     main()

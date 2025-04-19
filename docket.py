@@ -11,6 +11,7 @@ class Docket:
     def __init__(self, docket_url, token):
         self.docket_url = docket_url
         self.headers = self.__headers(token)
+        self.docket_id = None
         self.single_docket_json = None
         self.docket_entries_json = None
     
@@ -20,15 +21,17 @@ class Docket:
         }
 
     def _docket_id(self):
-        url = urlparse(self.docket_url)
-        path = url.path.strip('/')        
-        path_pieces = path.split('/')
-        if len(path_pieces) < 2 or path_pieces[0] != "docket": 
-            raise Exception(f"Docket id missing in url dummy: {self.docket_url}")
-        docket_id = path_pieces[1]
-        if not docket_id.isdigit(): 
-            raise Exception(f"{docket_id} is not a valid docket id")  
-        return docket_id
+        if not self.docket_id:
+            url = urlparse(self.docket_url)
+            path = url.path.strip('/')        
+            path_pieces = path.split('/')
+            if len(path_pieces) < 2 or path_pieces[0] != "docket": 
+                raise Exception(f"Docket id missing in url dummy: {self.docket_url}")
+            docket_id = path_pieces[1]
+            if not docket_id.isdigit(): 
+                raise Exception(f"{docket_id} is not a valid docket id")  
+            self.docket_id = docket_id
+        return self.docket_id
         
     def _create_request_url(self, *, api_type, fields=None):
         docket_id = self._docket_id()
@@ -90,6 +93,9 @@ class Docket:
     # def pages(self):
     #     count = self.count()
     #     return count/20
+    
+    def id(self):
+        return self._docket_id()
     
     def entries(self):
         all_entries = []
