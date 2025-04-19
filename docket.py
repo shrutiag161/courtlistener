@@ -3,8 +3,8 @@ import pytz
 from urllib.parse import urlparse
 from libs import datetime_formatter as dtf
 
-single_DOCKET_API = "https://www.courtlistener.com/api/rest/v4/dockets/"
-entries_DOCKET_API = "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket="
+DOCKET_API_SINGLE = "https://www.courtlistener.com/api/rest/v4/dockets/"
+DOCKET_API_ENTRIES = "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket="
 JSON_RESPONSE_DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%S.%f%z"
 
 class Docket:
@@ -36,18 +36,18 @@ class Docket:
     def _create_request_url(self, *, api_type, fields=None):
         docket_id = self._docket_id()
         if api_type=="single":
-            request_url = single_DOCKET_API + docket_id
+            request_url = DOCKET_API_SINGLE + docket_id
             if fields:
                 fields_str = ",".join(fields)
                 request_url = f"{request_url}?fields={fields_str}" 
         elif api_type == "entries":
-            request_url = entries_DOCKET_API + docket_id
+            request_url = DOCKET_API_ENTRIES + docket_id
         return request_url
 
     def _response(self, url):
-        print(f"making request {url}")
-        response = requests.get(url, headers=self.headers)
-        response.raise_for_status() # raises for 4xx or 5xx response
+        with requests.Session() as session:
+            response = session.get(url, headers=self.headers)
+            response.raise_for_status() # raises for 4xx or 5xx response
         return response
 
     def _response_json(self, request_url):
@@ -78,26 +78,23 @@ class Docket:
         new_dt_format = "%A %b %d at %I %p %Z"
         return dtf.format_dt(dt, new_dt_format)
 
+    @property
     def case_name(self):
         return self._find_in_json("case_name", default="Not Found", json_type="single")
 
-    def date_modified(self):
-        date_modified = self._find_in_json("date_modified", default="Not Found", json_type="single")
-        return self._format_dt_str(date_modified)
-    
-    # def count(self):
-    #     count_url = self._find_in_json("count", json_type="entries")
-    #     count_json = self._response_json(count_url)
-    #     return count_json["count"]
-    
-    # def pages(self):
-    #     count = self.count()
-    #     return count/20
-    
-    def id(self):
+    @property
+    def date_modified(self) -> str:
+        date_modified = self._find_in_json("date_modified", json_type="single")
+        if date_modified:
+            return self._format_dt_str(date_modified)
+        return date_modified
+
+    @property
+    def id(self) -> int:
         return self._docket_id()
     
-    def entries(self):
+    @property
+    def entries(self) -> list[dict]:
         all_entries = []
         self._load_docket_json(api_type="entries")
         recent_entries_json = self.docket_entries_json

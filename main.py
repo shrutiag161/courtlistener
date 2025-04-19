@@ -9,13 +9,13 @@ import json
 DOCKET_URLS_FILE = "docket_urls.txt"
 TOKEN_FILE = "token.txt"
 
-def read_input_files():
+def read_input_files() -> tuple[list[str], str]:
     try:
         docket_urls = fr.read_file_as_list(DOCKET_URLS_FILE, ignore_blank_lines=True, allow_empty_file=False) 
         api_token = fr.read_file_as_string(TOKEN_FILE, allow_empty_file=False)
         return docket_urls, api_token
     except Exception as e:
-        # logging.error(f"{e}")
+        logging.error(f"{e}")
         sys.exit(1)
 
 def get_docket(docket_url, api_token):
@@ -37,10 +37,10 @@ def main():
     for url in docket_urls:
         docket = get_docket(url, api_token)
         docket_info = {
-            "id": docket.id(),
-            "case_name": docket.case_name(), 
-            "last_updated": docket.date_modified(), 
-            "entries": docket.entries()
+            "id": docket.id,
+            "case_name": docket.case_name, 
+            "last_updated": docket.date_modified, 
+            # "entries": docket.entries()
         }
         write_to_json(**docket_info)
 
