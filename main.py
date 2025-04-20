@@ -1,5 +1,7 @@
 import docket as d
 from docket_service import DocketService
+from docket import Docket
+from docket_entry import DocketEntry
 from libs import file_reader as fr
 from libs import rest_api as ra
 import logging
@@ -30,11 +32,11 @@ def main():
     service = DocketService(api_token)
     for url in docket_urls:
         docket_json = service.get_docket_json(url)
-        # docket = Docket(docket_json)
+        docket = Docket(docket_json)
         # save_to_docket_db(docket.docket_id, docket.case_name, docket.date_modified)
         docket_entries = service.get_entries(url)
         for e in docket_entries:
-            # entry = DocketEntry(e)
+            entry = DocketEntry(e)
             # save_to_entry_db(docket.docket_id, entry)
         
         # with d.Docket(url, api_token) as docket:

@@ -71,3 +71,9 @@ class DocketService:
         response = self._get_response(request_url)
         entries_page_one_json = response.json()
         return self._get_all_entries(entries_page_one_json)
+    
+    # def __enter__(self):
+    #     return self
+    
+    # def __exit__(self, exc_type, exc_value, traceback):
+    #     self.session.close()
