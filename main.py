@@ -18,14 +18,6 @@ def read_input_files() -> tuple[list[str], str]:
         logging.error(f"{e}")
         sys.exit(1)
 
-def get_docket(docket_url, api_token):
-    print(f"Docket: {docket_url}")
-    # try:
-    docket = d.Docket(docket_url, api_token)
-    return docket
-    # except Exception as e:
-    #     logging.error(f"{e}", exc_info=True)
-
 def write_to_json(**docket_info):
     if "id" not in docket_info:
         raise ValueError("No docket id!!")
@@ -35,13 +27,13 @@ def write_to_json(**docket_info):
 def main():
     docket_urls, api_token = read_input_files()
     for url in docket_urls:
-        docket = get_docket(url, api_token)
-        docket_info = {
-            "id": docket.id,
-            "case_name": docket.case_name, 
-            "last_updated": docket.date_modified, 
-            # "entries": docket.entries()
-        }
+        with d.Docket(url, api_token) as docket:
+            docket_info = {
+                "id": docket.docket_id,
+                "case_name": docket.case_name, 
+                "last_updated": docket.date_modified, 
+                "entries": docket.entries
+            }
         write_to_json(**docket_info)
 
 if __name__ == "__main__":

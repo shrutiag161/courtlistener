@@ -4,7 +4,7 @@ import logging
 # Converts a datetime string into a date
 # If no timezone is given then local time will be used by default
 # dt_str_format example: "%Y-%m-%dT%H:%M:%S.%f%z"
-def str_to_dt(dt_str, dt_str_format, *, timezone = None):
+def str_to_dt(dt_str, dt_str_format, timezone = None):
     dt = datetime.strptime(dt_str, dt_str_format) # string to datetime
     return dt.astimezone(timezone) # convert datetime to new timezone
 

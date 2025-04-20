@@ -2,6 +2,7 @@ import requests
 import pytz
 from urllib.parse import urlparse
 from libs import datetime_formatter as dtf
+from functools import cached_property
 
 DOCKET_API_SINGLE = "https://www.courtlistener.com/api/rest/v4/dockets/"
 DOCKET_API_ENTRIES = "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket="
@@ -11,43 +12,48 @@ class Docket:
     def __init__(self, docket_url, token):
         self.docket_url = docket_url
         self.headers = self.__headers(token)
-        self.docket_id = None
         self.single_docket_json = None
         self.docket_entries_json = None
+        self.session = requests.Session()
+
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.session.close()
     
     def __headers(self, token):
         return {
             'Authorization': f'Token {token}',
         }
 
-    def _docket_id(self):
-        if not self.docket_id:
-            url = urlparse(self.docket_url)
-            path = url.path.strip('/')        
-            path_pieces = path.split('/')
-            if len(path_pieces) < 2 or path_pieces[0] != "docket": 
-                raise Exception(f"Docket id missing in url dummy: {self.docket_url}")
-            docket_id = path_pieces[1]
-            if not docket_id.isdigit(): 
-                raise Exception(f"{docket_id} is not a valid docket id")  
-            self.docket_id = docket_id
-        return self.docket_id
+    @cached_property
+    def docket_id(self):
+        url = urlparse(self.docket_url)
+        path = url.path.strip('/')        
+        path_pieces = path.split('/')
+        if len(path_pieces) < 2 or path_pieces[0] != "docket": 
+            raise Exception(f"Docket id missing in url dummy: {self.docket_url}")
+        id = path_pieces[1]
+        if not id.isdigit(): 
+            raise Exception(f"{id} is not a valid docket id")  
+        return id
         
     def _create_request_url(self, *, api_type, fields=None):
-        docket_id = self._docket_id()
+        id = self.docket_id
         if api_type=="single":
-            request_url = DOCKET_API_SINGLE + docket_id
-            if fields:
-                fields_str = ",".join(fields)
-                request_url = f"{request_url}?fields={fields_str}" 
+            request_url = DOCKET_API_SINGLE + id
+            # if fields:
+            #     fields_str = ",".join(fields)
+            #     request_url = f"{request_url}?fields={fields_str}" 
         elif api_type == "entries":
-            request_url = DOCKET_API_ENTRIES + docket_id
+            request_url = DOCKET_API_ENTRIES + id
         return request_url
 
     def _response(self, url):
-        with requests.Session() as session:
-            response = session.get(url, headers=self.headers)
-            response.raise_for_status() # raises for 4xx or 5xx response
+        response = self.session.get(url, headers=self.headers)
+        print(f"requested {url}")
+        response.raise_for_status() # raises for 4xx or 5xx response
         return response
 
     def _response_json(self, request_url):
@@ -63,6 +69,8 @@ class Docket:
             if not self.docket_entries_json:
                 req_url = self._create_request_url(api_type="entries")
                 self.docket_entries_json = self._response_json(req_url)
+        else:
+            raise Exception(f"api_type {api_type} is not 'single' or 'entries'")
 
     def _find_in_json(self, key, *, default=None, json_type):
         if json_type == "single":
@@ -73,15 +81,15 @@ class Docket:
             return self.docket_entries_json.get(key, default)           
 
     def _format_dt_str(self, dt_str):
-        tz = pytz.timezone('US/Central')
-        dt = dtf.str_to_dt(dt_str, JSON_RESPONSE_DATETIME_FORMAT, tz)
+        central_tz = pytz.timezone('US/Central')
+        dt = dtf.str_to_dt(dt_str, JSON_RESPONSE_DATETIME_FORMAT, central_tz)
         new_dt_format = "%A %b %d at %I %p %Z"
         return dtf.format_dt(dt, new_dt_format)
 
     @property
     def case_name(self):
         return self._find_in_json("case_name", default="Not Found", json_type="single")
-
+    
     @property
     def date_modified(self) -> str:
         date_modified = self._find_in_json("date_modified", json_type="single")
@@ -89,19 +97,15 @@ class Docket:
             return self._format_dt_str(date_modified)
         return date_modified
 
-    @property
-    def id(self) -> int:
-        return self._docket_id()
-    
-    @property
+    @cached_property
     def entries(self) -> list[dict]:
         all_entries = []
         self._load_docket_json(api_type="entries")
         recent_entries_json = self.docket_entries_json
         all_entries.extend(recent_entries_json["results"])
         next_url = recent_entries_json["next"]
-        while(next_url):
-            previous_entries_json = self._response_json(next_url)
-            all_entries.extend(previous_entries_json["results"])
-            next_url = previous_entries_json["next"]
+        # while(next_url):
+        #     previous_entries_json = self._response_json(next_url)
+        #     all_entries.extend(previous_entries_json["results"])
+        #     next_url = previous_entries_json["next"]
         return all_entries
