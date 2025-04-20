@@ -1,13 +1,10 @@
-import requests
 import pytz
-from urllib.parse import urlparse
 from libs import datetime_formatter as dtf
 from functools import cached_property
 
-DOCKET_API_SINGLE = "https://www.courtlistener.com/api/rest/v4/dockets/"
-DOCKET_API_ENTRIES = "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket="
 JSON_RESPONSE_DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%S.%f%z"
 
+# Entire Docket (one case)
 class Docket:
     def __init__(self, docket_url, token):
         self.docket_url = docket_url
@@ -21,44 +18,7 @@ class Docket:
     
     def __exit__(self, exc_type, exc_value, traceback):
         self.session.close()
-    
-    def __headers(self, token):
-        return {
-            'Authorization': f'Token {token}',
-        }
 
-    @cached_property
-    def docket_id(self):
-        url = urlparse(self.docket_url)
-        path = url.path.strip('/')        
-        path_pieces = path.split('/')
-        if len(path_pieces) < 2 or path_pieces[0] != "docket": 
-            raise Exception(f"Docket id missing in url dummy: {self.docket_url}")
-        id = path_pieces[1]
-        if not id.isdigit(): 
-            raise Exception(f"{id} is not a valid docket id")  
-        return id
-        
-    def _create_request_url(self, *, api_type, fields=None):
-        id = self.docket_id
-        if api_type=="single":
-            request_url = DOCKET_API_SINGLE + id
-            # if fields:
-            #     fields_str = ",".join(fields)
-            #     request_url = f"{request_url}?fields={fields_str}" 
-        elif api_type == "entries":
-            request_url = DOCKET_API_ENTRIES + id
-        return request_url
-
-    def _response(self, url):
-        response = self.session.get(url, headers=self.headers)
-        print(f"requested {url}")
-        response.raise_for_status() # raises for 4xx or 5xx response
-        return response
-
-    def _response_json(self, request_url):
-        response = self._response(request_url)
-        return response.json()
     
     def _load_docket_json(self, *, api_type):
         if api_type == "single":

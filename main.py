@@ -1,4 +1,5 @@
 import docket as d
+from docket_service import DocketService
 from libs import file_reader as fr
 from libs import rest_api as ra
 import logging
@@ -26,15 +27,24 @@ def write_to_json(**docket_info):
 
 def main():
     docket_urls, api_token = read_input_files()
+    service = DocketService(api_token)
     for url in docket_urls:
-        with d.Docket(url, api_token) as docket:
-            docket_info = {
-                "id": docket.docket_id,
-                "case_name": docket.case_name, 
-                "last_updated": docket.date_modified, 
-                "entries": docket.entries
-            }
-        write_to_json(**docket_info)
+        docket_json = service.get_docket_json(url)
+        # docket = Docket(docket_json)
+        # save_to_docket_db(docket.docket_id, docket.case_name, docket.date_modified)
+        docket_entries = service.get_entries(url)
+        for e in docket_entries:
+            # entry = DocketEntry(e)
+            # save_to_entry_db(docket.docket_id, entry)
+        
+        # with d.Docket(url, api_token) as docket:
+        #     docket_info = {
+        #         "id": docket.docket_id,
+        #         "case_name": docket.case_name, 
+        #         "last_updated": docket.date_modified, 
+        #         "entries": docket.entries
+        #     }
+        # write_to_json(**docket_info)
 
 if __name__ == "__main__":
     main()
