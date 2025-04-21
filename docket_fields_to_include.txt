@@ -1,0 +1,6 @@
+id
+date_filed
+original_court_info
+date_modified
+case_name
+assigned_to_str

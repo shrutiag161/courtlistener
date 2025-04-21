@@ -1,7 +1,5 @@
 import requests
-from functools import cached_property
 from urllib.parse import urlparse
-import requests
 
 DOCKET_API = "https://www.courtlistener.com/api/rest/v4/dockets/"
 ENTRIES_API = "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket="
@@ -30,7 +28,7 @@ class DocketService:
         return id
     
     @staticmethod
-    def _create_docket_request_url(docket_id, *, fields=None):
+    def _create_docket_request_url(docket_id, fields=None):
         request_url = DOCKET_API + docket_id
         if fields:
             fields_str = ",".join(fields)
@@ -47,9 +45,9 @@ class DocketService:
         response.raise_for_status() # raises for 4xx or 5xx response
         return response
     
-    def get_docket_json(self, docket_url:str) -> dict:
-        docket_id = self._extract_docket_id(docket_url)
-        request_url = self._create_docket_request_url(docket_id)
+    def get_docket_json(self, docket_url:str, *, fields:list[str]=None) -> dict:
+        docket_id = DocketService._extract_docket_id(docket_url)
+        request_url = DocketService._create_docket_request_url(docket_id, fields)
         response = self._get_response(request_url)
         return response.json()
     
@@ -58,22 +56,25 @@ class DocketService:
         all_entries.extend(entries_json["results"])
         next_url = entries_json["next"]
         while(next_url):
-            next_entries_json = self._get_response(next_url).json()
+            next_response = self._get_response(next_url)
+            # if next_response.status_code == 429:
+            #     print("oopsies rate limited :(((")
+            #     time.sleep(5)
+            #     continue
+            next_entries_json = next_response.json()
             all_entries.extend(next_entries_json["results"])
             next_url = next_entries_json["next"]
         return all_entries
 
     def get_entries(self, docket_url:str) -> list[dict]:
-        if not self._is_valid_docket_url(docket_url):
-            raise Exception(f"{docket_url} is not a valid court listener docket url")
-        docket_id = self._extract_docket_id(docket_url)
-        request_url = self._create_entries_request_url(docket_id)
+        docket_id = DocketService._extract_docket_id(docket_url)
+        request_url = DocketService._create_entries_request_url(docket_id)
         response = self._get_response(request_url)
         entries_page_one_json = response.json()
         return self._get_all_entries(entries_page_one_json)
     
-    # def __enter__(self):
-    #     return self
+    def __enter__(self):
+        return self
     
-    # def __exit__(self, exc_type, exc_value, traceback):
-    #     self.session.close()
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.session.close()

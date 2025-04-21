@@ -1,4 +1,4 @@
-from docket_service import DocketService
+from model.docket_service import DocketService
 import pytest
 
 docket_url = "https://www.courtlistener.com/docket/69746454/20/state-of-maryland-v-usda/"
