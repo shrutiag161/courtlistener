@@ -31,3 +31,4 @@ class DocketEntry:
         output = self._update_entry_id(output)
         output = self._add_docket_id(output, self.docket_id)
         return output
+    
