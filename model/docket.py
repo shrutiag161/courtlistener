@@ -18,11 +18,37 @@ class Docket:
 
     @property
     def case_name(self):
+        return self.json.get("id", "Not Found")
+    
+    @property
+    def date_filed(self):
+        return self.json.get("date_filed", "Not Found")
+    
+    @property
+    def date_modified(self):
+        return self.json.get("date_modified", "Not Found")
+    
+    @property
+    def case_name(self):
         return self.json.get("case_name", "Not Found")
     
     @property
-    def date_modified(self) -> str:
-        date_modified = self.json.get("date_modified")
-        if date_modified:
-            return Docket._format_dt_str(date_modified)
-        return date_modified
+    def assigned_to_str(self):
+        return self.json.get("assigned_to_str", "Not Found")
+    
+    @property
+    def assigned_to_str(self):
+        return self.json.get("assigned_to_str", "Not Found")
+    
+    @property
+    def docket_number(self):
+        return self.json.get("docket_number", "Not Found")
+    
+    
+    
+    # @property
+    # def date_modified(self) -> str:
+    #     date_modified = self.json.get("date_modified")
+    #     if date_modified:
+    #         return Docket._format_dt_str(date_modified)
+    #     return date_modified
