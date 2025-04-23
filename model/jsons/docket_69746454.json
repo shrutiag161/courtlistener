@@ -1,76 +1,514 @@
-{
-    "resource_uri": "https://www.courtlistener.com/api/rest/v4/dockets/69746454/",
-    "id": 69746454,
-    "court": "https://www.courtlistener.com/api/rest/v4/courts/ca4/",
-    "court_id": "ca4",
-    "original_court_info": {
-        "resource_uri": "https://www.courtlistener.com/api/rest/v4/originating-court-information/40188/",
-        "id": 40188,
-        "date_created": "2025-03-17T11:33:30.296864-07:00",
-        "date_modified": "2025-04-22T08:44:04.500861-07:00",
-        "docket_number": "1:25-cv-00748",
-        "assigned_to_str": "",
-        "ordering_judge_str": "Adam B. Abelson U. S. Court",
-        "court_reporter": "Kassandra McPherson, Official Court Reporter",
-        "date_disposed": null,
-        "date_filed": "2025-03-06",
-        "date_judgment": "2025-03-13",
-        "date_judgment_eod": "2025-03-13",
-        "date_filed_noa": "2025-03-14",
-        "date_received_coa": "2025-03-17",
-        "assigned_to": null,
-        "ordering_judge": null
+[
+    {
+        "date_filed": "2025-04-16",
+        "date_modified": "2025-04-23T09:05:07.205535-07:00",
+        "entry_number": 61,
+        "description": "Receipt of paper copy of APPENDIX filed at [59] by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, Sean Duffy, Stephen Ehikian, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, Travis Hill, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, USAID, USDA, United States Department of Commerce, DOD, United States Department of Education, United States Department of Energy, HHS, United States Department of Homeland Security, HUD, United States Department of Labor, United States Department of Transportation, United States Department of Veterans Affairs, United States Department of the Interior, United States Department of the Treasury, EPA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338. Total number of volumes (including any sealed): [3]. Total number of pages in all volumes: [1027]. Total number of sealed volumes: 0. Sufficient? Yes. CD/DVD/Other exhibit? No. Number of copies: [4]. Received by clerk date: 04/18/2025. [1001757544] [25-1248, 25-1338] JSN [Entered: 04/22/2025 02:48 PM]",
+        "entry_id": 423216335,
+        "docket_id": 69746454
     },
-    "idb_data": null,
-    "clusters": [],
-    "audio_files": [],
-    "assigned_to": null,
-    "referred_to": null,
-    "absolute_url": "/docket/69746454/state-of-maryland-v-usda/",
-    "date_created": "2025-03-17T11:33:30.306088-07:00",
-    "date_modified": "2025-04-22T11:48:32.322934-07:00",
-    "source": 1,
-    "appeal_from_str": "United States District Court for the District of Maryland at Baltimore",
-    "assigned_to_str": "",
-    "referred_to_str": "",
-    "panel_str": "",
-    "date_last_index": null,
-    "date_cert_granted": null,
-    "date_cert_denied": null,
-    "date_argued": null,
-    "date_reargued": null,
-    "date_reargument_denied": null,
-    "date_filed": "2025-03-17",
-    "date_terminated": null,
-    "date_last_filing": "2025-04-16",
-    "case_name_short": "USDA",
-    "case_name": "State of Maryland v. USDA",
-    "case_name_full": "",
-    "slug": "state-of-maryland-v-usda",
-    "docket_number": "25-1248",
-    "docket_number_core": "25001248",
-    "federal_dn_office_code": "",
-    "federal_dn_case_type": "",
-    "federal_dn_judge_initials_assigned": "",
-    "federal_dn_judge_initials_referred": "",
-    "federal_defendant_number": null,
-    "pacer_case_id": "178032",
-    "cause": "",
-    "nature_of_suit": "2899 Other Statutes",
-    "jury_demand": "",
-    "jurisdiction_type": "",
-    "appellate_fee_status": "us",
-    "appellate_case_type_information": "Civil U.S., United States",
-    "mdl_status": "",
-    "filepath_ia": "",
-    "filepath_ia_json": "",
-    "ia_upload_failure_count": null,
-    "ia_needs_upload": true,
-    "ia_date_first_change": "2025-03-17T11:33:30.283013-07:00",
-    "date_blocked": null,
-    "blocked": false,
-    "appeal_from": "https://www.courtlistener.com/api/rest/v4/courts/mdd/",
-    "parent_docket": null,
-    "tags": [],
-    "panel": []
-}
+    {
+        "date_filed": "2025-04-16",
+        "date_modified": "2025-04-23T09:05:07.148008-07:00",
+        "entry_number": 60,
+        "description": "Receipt of paper copy of OPENING BRIEF filed at [58] by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, Sean Duffy, Stephen Ehikian, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, Travis Hill, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, USAID, USDA, United States Department of Commerce, DOD, United States Department of Education, United States Department of Energy, HHS, United States Department of Homeland Security, HUD, United States Department of Labor, United States Department of Transportation, United States Department of Veterans Affairs, United States Department of the Interior, United States Department of the Treasury, EPA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338. Number of pages: [57]. Sufficient: Yes. Number of copies: [4]. Received by clerk date: 04/18/2025. [1001757539] [25-1248, 25-1338] JSN [Entered: 04/22/2025 02:44 PM]",
+        "entry_id": 423216333,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-16",
+        "date_modified": "2025-04-22T11:48:32.434126-07:00",
+        "entry_number": null,
+        "description": "Receipt of paper copy of APPENDIX filed at 59 by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, Sean Duffy, Stephen Ehikian, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, Travis Hill, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, USAID, USDA, United States Department of Commerce, DOD, United States Department of Education, United States Department of Energy, HHS, United States Department of Homeland Security, HUD, United States Department of Labor, United States Department of Transportation, United States Department of Veterans Affairs, United States Department of the Interior, United States Department of the Treasury, EPA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338. Total number of volumes (including any sealed): 3. Total number of pages in all volumes: 1027. Total number of sealed volumes: 0. Sufficient? Yes. CD/DVD/Other exhibit? No. Number of copies: 4. Received by clerk date: 04/18/2025. 1001757544 [25-1248, 25-1338] JSN",
+        "entry_id": 423114251,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-16",
+        "date_modified": "2025-04-22T11:45:35.608312-07:00",
+        "entry_number": null,
+        "description": "Receipt of paper copy of OPENING BRIEF filed at 58 by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, Sean Duffy, Stephen Ehikian, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, Travis Hill, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, USAID, USDA, United States Department of Commerce, DOD, United States Department of Education, United States Department of Energy, HHS, United States Department of Homeland Security, HUD, United States Department of Labor, United States Department of Transportation, United States Department of Veterans Affairs, United States Department of the Interior, United States Department of the Treasury, EPA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338. Number of pages: 57. Sufficient: Yes. Number of copies: 4. Received by clerk date: 04/18/2025. 1001757539 [25-1248, 25-1338] JSN",
+        "entry_id": 423114205,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-16",
+        "date_modified": "2025-04-23T09:05:07.075404-07:00",
+        "entry_number": 59,
+        "description": "JOINT APPENDIX by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338. Digital media exhibit volume? No. [1001754846] [25-1248, 25-1338] Sarah Welch [Entered: 04/16/2025 09:52 PM]",
+        "entry_id": 422676596,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-16",
+        "date_modified": "2025-04-23T09:05:07.039928-07:00",
+        "entry_number": 58,
+        "description": "BRIEF by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338. Type of Brief: OPENING. . Do any cases pending in this court or the Supreme Court of the United States raise similar issues? NO.. [1001754838] [25-1248, 25-1338] Sarah Welch [Entered: 04/16/2025 09:07 PM]",
+        "entry_id": 422676595,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-15",
+        "date_modified": "2025-04-23T09:05:07.009353-07:00",
+        "entry_number": 57,
+        "description": "ORAL ARGUMENT ACKNOWLEDGMENT by State of Arizona, State of California, State of Colorado, State of Connecticut, State of Delaware, State of Hawaii, State of Illinois, State of Maryland, State of Massachusetts, State of Michigan, State of Minnesota, State of Nevada, State of New Jersey, State of New Mexico, State of New York, State of Oregon, State of Rhode Island, State of Vermont, State of Wisconsin and District of Columbia in 25-1248, 25-1338. Counsel arguing: Caroline S. Van Zile. Answering argument time: 20 minutes. .. [1001753961] [25-1248, 25-1338] Caroline Van Zile [Entered: 04/15/2025 03:54 PM]",
+        "entry_id": 422501867,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-15",
+        "date_modified": "2025-04-23T09:05:06.979947-07:00",
+        "entry_number": 56,
+        "description": "ORAL ARGUMENT ACKNOWLEDGMENT by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright, Lee M. Zeldin and District of Columbia in 25-1248, 25-1338. Counsel arguing: Sarah Welch. Opening argument time: 15 minutes. Rebuttal argument time: 5 minutes. .. [1001753782] [25-1248, 25-1338] Sarah Welch [Entered: 04/15/2025 01:06 PM]",
+        "entry_id": 422455718,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-11",
+        "date_modified": "2025-04-23T09:05:06.952944-07:00",
+        "entry_number": 55,
+        "description": "Attorney Virginia Anne Williamson for State of Minnesota in 25-1248 terminated from case. Reason for termination: Not participating. [1001752069] [25-1248, 25-1338] JSN [Entered: 04/11/2025 01:26 PM]",
+        "entry_id": 422169112,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-11",
+        "date_modified": "2025-04-23T09:05:06.925803-07:00",
+        "entry_number": 54,
+        "description": "Attorney James David Handley for State of Wisconsin, State of Vermont, State of Rhode Island, State of Oregon, State of New York, State of New Jersey, State of Nevada, State of Minnesota, State of Michigan, State of Massachusetts, State of Maryland, State of Illinois, State of Hawaii, State of Connecticut, State of Colorado, State of California, State of Arizona and District of Columbia in 25-1248, Virginia Anne Williamson for State of Minnesota in 25-1338 terminated from case. Reason for termination: Not participating. [1001752067] [25-1248, 25-1338] JSN [Entered: 04/11/2025 01:25 PM]",
+        "entry_id": 422169111,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-11",
+        "date_modified": "2025-04-23T09:05:06.898906-07:00",
+        "entry_number": 53,
+        "description": "DOCKETING STATEMENT by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin.. [1001752065] [25-1338] Steven Myers [Entered: 04/11/2025 01:14 PM]",
+        "entry_id": 422169110,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-11",
+        "date_modified": "2025-04-23T09:05:06.868520-07:00",
+        "entry_number": 52,
+        "description": "APPEARANCE OF COUNSEL by Sarah Welch for Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338. [1001752057] [25-1248, 25-1338] Sarah Welch [Entered: 04/11/2025 01:06 PM]",
+        "entry_id": 422169109,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-11",
+        "date_modified": "2025-04-11T10:26:10.301018-07:00",
+        "entry_number": null,
+        "description": "Attorney James David Handley for State of Wisconsin, State of Vermont, State of Rhode Island, State of Oregon, State of New York, State of New Jersey, State of Nevada, State of Minnesota, State of Michigan, State of Massachusetts, State of Maryland, State of Illinois, State of Hawaii, State of Connecticut, State of Colorado, State of California, State of Arizona and District of Columbia in 25-1248, Virginia Anne Williamson for State of Minnesota in 25-1338 terminated from case. Reason for termination: Not participating. 1001752067 [25-1248, 25-1338] JSN",
+        "entry_id": 422126628,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-10",
+        "date_modified": "2025-04-22T08:44:05.967561-07:00",
+        "entry_number": 51,
+        "description": "PETITION for rehearing en banc by State of Maryland, State of Minnesota, District of Columbia, State of Arizona, State of California, State of Colorado, State of Connecticut, State of Delaware, State of Hawaii, State of Illinois, State of Massachusetts, State of Michigan, State of Nevada, State of New Jersey, State of New Mexico, State of New York, State of Oregon, State of Rhode Island, State of Vermont, and State of Wisconsin in 25-1248, 25-1338. [1001751682] [25-1248, 25-1338]--[Edited 04/16/2025 by JSN] Adam Kirschner [Entered: 04/10/2025 09:32 PM]",
+        "entry_id": 422087453,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-10",
+        "date_modified": "2025-04-22T08:44:05.934936-07:00",
+        "entry_number": 50,
+        "description": "APPEARANCE OF COUNSEL by Adam Kirschner for State of Maryland in 25-1248, 25-1338. [1001751681] [25-1248, 25-1338] Adam Kirschner [Entered: 04/10/2025 09:14 PM]",
+        "entry_id": 422087452,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-10",
+        "date_modified": "2025-04-22T08:44:05.907101-07:00",
+        "entry_number": 49,
+        "description": "NOTICE ISSUED to Mr. David Moskowitz in 25-1248, 25-1338 re: change of address. [1001751637] [25-1248, 25-1338] JSN [Entered: 04/10/2025 04:25 PM]",
+        "entry_id": 422044384,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-10",
+        "date_modified": "2025-04-22T08:44:05.876408-07:00",
+        "entry_number": 48,
+        "description": "COURT ORDER filed denying Motion for temporary administrative stay [45]. Copies to all parties. [1001751254] [25-1248, 25-1338] JSN [Entered: 04/10/2025 12:20 PM]",
+        "entry_id": 421978589,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-10",
+        "date_modified": "2025-04-22T08:44:05.851581-07:00",
+        "entry_number": 47,
+        "description": "APPEARANCE OF COUNSEL by Michael Drezner for State of Maryland in 25-1248, 25-1338. [1001751152] [25-1248, 25-1338] Michael Drezner [Entered: 04/10/2025 11:24 AM]",
+        "entry_id": 421978588,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-10",
+        "date_modified": "2025-04-22T08:44:05.826302-07:00",
+        "entry_number": 46,
+        "description": "RESPONSE/ANSWER by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338 to Motion [45]. Nature of response: in opposition. [1001751050] [25-1248, 25-1338] Steven Myers [Entered: 04/10/2025 10:08 AM]",
+        "entry_id": 421957491,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-09",
+        "date_modified": "2025-04-22T08:44:05.801654-07:00",
+        "entry_number": 45,
+        "description": "Emergency MOTION by State of Maryland, District of Columbia, State of Minnesota, State of Arizona, State of California, State of Colorado, State of Connecticut, State of Delaware, State of Hawaii, State of Illinois, State of Massachusetts, State of Michigan, State of Nevada, State of New Jersey, State of New Mexico, State of New York, State of Oregon, State of Rhode Island, State of Vermont and State of Wisconsin in 25-1248, 25-1338 for temporary administrative stay, Date of action to be stayed, if applicable:Court Order, Docket No. 42, dated 4/9/2025.. Date and method of service: 04/09/2025 ecf. [1001750820] [25-1248, 25-1338] Virginia Williamson [Entered: 04/09/2025 08:04 PM]",
+        "entry_id": 421922651,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-09",
+        "date_modified": "2025-04-22T08:44:05.775834-07:00",
+        "entry_number": 44,
+        "description": "CASE CALENDARED for oral argument. Date: 05/06/2025. Session Starting Time: 2: 30 p.m.. Check-in Time: 1:45 - 2:00 p.m. Forms due within 7 calendar days. [1001750746] [25-1248, 25-1338]--[Edited 04/09/2025 by NRS] Entry completed by NRS. RE [Entered: 04/09/2025 04:33 PM]",
+        "entry_id": 421883802,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-09",
+        "date_modified": "2025-04-22T08:44:05.746976-07:00",
+        "entry_number": 43,
+        "description": "Accelerated BRIEFING ORDER filed. No paper copies required unless case has been tentatively calendared or copies otherwise ordered. All filings must comply with Appendix Pagination & Brief Citation Guide. [1001750469] Opening Brief and Appendix due 04/16/2025. Response Brief due 04/23/2025. Reply brief due 04/28/2025. [25-1248, 25-1338]--[Edited 04/09/2025 by RP - dates modified]--[Edited 04/09/2025 by RP] RP [Entered: 04/09/2025 02:07 PM]",
+        "entry_id": 421853592,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-09",
+        "date_modified": "2025-04-22T08:44:05.721880-07:00",
+        "entry_number": 42,
+        "description": "COURT ORDER filed granting motion for stay pending appeal [34]. Copies to all parties. [1001750411] [25-1248, 25-1338] TW [Entered: 04/09/2025 01:00 PM]",
+        "entry_id": 421843263,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-08",
+        "date_modified": "2025-04-22T08:44:05.696697-07:00",
+        "entry_number": 41,
+        "description": "Letter re: advising of Supreme Court ruling [34] Motion for stay pending appeal by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338 . [1001749602] [25-1248, 25-1338] Steven Myers [Entered: 04/08/2025 12:27 PM]",
+        "entry_id": 421791369,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-07",
+        "date_modified": "2025-04-22T08:44:05.670799-07:00",
+        "entry_number": 40,
+        "description": "Corrected APPEARANCE OF COUNSEL by Hayleigh S. Crawford for State of Arizona in 25-1338, 25-1248. [1001749199] [25-1338, 25-1248] Hayleigh Crawford [Entered: 04/07/2025 05:10 PM]",
+        "entry_id": 421677781,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-07",
+        "date_modified": "2025-04-22T08:44:05.642321-07:00",
+        "entry_number": 39,
+        "description": "REPLY by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin in 25-1248, 25-1338 to response [36], Motion for stay pending appeal [34].. [1001748945] [25-1248, 25-1338] Steven Myers [Entered: 04/07/2025 02:34 PM]",
+        "entry_id": 421631661,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-07",
+        "date_modified": "2025-04-22T08:44:05.620408-07:00",
+        "entry_number": 38,
+        "description": "APPEARANCE OF COUNSEL by Elizabeth Kramer for State of Minnesota in 25-1248, 25-1338. [1001748913] [25-1248, 25-1338] Elizabeth Kramer [Entered: 04/07/2025 02:13 PM]",
+        "entry_id": 421603394,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-07",
+        "date_modified": "2025-04-22T08:44:05.593728-07:00",
+        "entry_number": 37,
+        "description": "APPEARANCE OF COUNSEL by Julia Doyle for State of Maryland in 25-1248. [1001748629] [25-1248, 25-1338] Julia Doyle [Entered: 04/07/2025 10:24 AM]",
+        "entry_id": 421598505,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-07",
+        "date_modified": "2025-04-22T08:44:05.561468-07:00",
+        "entry_number": 36,
+        "description": "RESPONSE/ANSWER by State of Maryland, District of Columbia, State of Minnesota, State of Arizona, State of California, State of Colorado, State of Connecticut, State of Delaware, State of Hawaii, State of Illinois, State of Massachusetts, State of Michigan, State of Nevada, State of New Jersey, State of New Mexico, State of New York, State of Oregon, State of Rhode Island, State of Vermont and State of Wisconsin in 25-1248, 25-1338 to notice requesting response [35], Motion [34]. Nature of response: in opposition. [1001748465] [25-1248, 25-1338] Virginia Williamson [Entered: 04/07/2025 08:44 AM]",
+        "entry_id": 421598504,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-04",
+        "date_modified": "2025-04-22T08:44:05.537915-07:00",
+        "entry_number": 35,
+        "description": "NOTICE ISSUED to District of Columbia, State of Arizona, State of California, State of Colorado, State of Connecticut, State of Delaware, State of Hawaii, State of Illinois, State of Maryland, State of Massachusetts, State of Michigan, State of Minnesota, State of Nevada, State of New Jersey, State of New Mexico, State of New York, State of Oregon, State of Rhode Island, State of Vermont and State of Wisconsin in 25-1248, 25-1338 requesting response to Motion for stay pending appeal [34]. Response due: 04/07/2025 by 9:00 a.m.[1001748348] [25-1248, 25-1338] JSN [Entered: 04/04/2025 04:30 PM]",
+        "entry_id": 421507030,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-04",
+        "date_modified": "2025-04-22T08:44:05.494721-07:00",
+        "entry_number": 34,
+        "description": "MOTION by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright, Lee M. Zeldin and District of Columbia in 25-1248, 25-1338 for stay pending appeal.. Date and method of service: 04/04/2025 ecf. [1001748223] [25-1248, 25-1338] Steven Myers [Entered: 04/04/2025 02:43 PM]",
+        "entry_id": 421438608,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-03",
+        "date_modified": "2025-04-22T08:44:05.469325-07:00",
+        "entry_number": 33,
+        "description": "APPEARANCE OF COUNSEL by Sarah W. Rice for State of Rhode Island in 25-1338, 25-1248. [1001747603] [25-1338, 25-1248] Sarah Rice [Entered: 04/03/2025 02:56 PM]",
+        "entry_id": 421312266,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-04-03",
+        "date_modified": "2025-04-22T08:44:05.441673-07:00",
+        "entry_number": 32,
+        "description": "ORDER filed consolidating case 25-1338 with 25-1248. Copies to all parties. [1001747576] [25-1248, 25-1338] JSN [Entered: 04/03/2025 02:28 PM]",
+        "entry_id": 421306620,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-31",
+        "date_modified": "2025-04-22T08:44:05.413940-07:00",
+        "entry_number": 31,
+        "description": "Attorney Beatrice Campbell Thomas for Lee M. Zeldin, Christopher A. Wright, Russell Vought, EPA, United States Department of the Treasury, United States Department of the Interior, United States Department of Veterans Affairs, United States Department of Transportation, United States Department of Labor, HUD, United States Department of Homeland Security, HHS, United States Department of Energy, United States Department of Education, DOD, United States Department of Commerce, USDA, USAID, Scott Turner, SBA, Marco Rubio, Brooke Rollins, OPM, Kristi Noem, National Archives and Records Administration, Vincent N. Micone III, Linda McMahon, Howard Lutnick, Kelly Loefler, Robert F. Kennedy Jr., Travis Hill, Pete Hegseth, General Services Administration, FDIC, Charles Ezell, Stephen Ehikian, Sean Duffy, Consumer Financial Protection Bureau, Douglas Collins, Douglas Burgum and Scott Bessent in 25-1248 terminated from case. Reason for termination: Not participating. [1001745237] [25-1248] JSN [Entered: 03/31/2025 12:57 PM]",
+        "entry_id": 420974391,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-31",
+        "date_modified": "2025-04-22T08:44:05.387363-07:00",
+        "entry_number": 30,
+        "description": "DOCKETING STATEMENT by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin.. [1001745003] [25-1248] Steven Myers [Entered: 03/31/2025 10:19 AM]",
+        "entry_id": 420882482,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-28",
+        "date_modified": "2025-04-22T08:44:05.368931-07:00",
+        "entry_number": 29,
+        "description": "APPEARANCE OF COUNSEL by David D.Day for State of Hawaii. [1001744742] [25-1248] David Day [Entered: 03/28/2025 08:31 PM]",
+        "entry_id": 420829136,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-28",
+        "date_modified": "2025-04-22T08:44:05.348508-07:00",
+        "entry_number": 28,
+        "description": "APPEARANCE OF COUNSEL by Kaliko'onalani D. Fernandes for State of Hawaii. [1001744740] [25-1248] Kalikoonalani Fernandes [Entered: 03/28/2025 08:25 PM]",
+        "entry_id": 420829135,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-27",
+        "date_modified": "2025-04-22T08:44:05.324449-07:00",
+        "entry_number": 27,
+        "description": "APPEARANCE OF COUNSEL by Hayleigh S. Crawford for State of Arizona. [1001743917] [25-1248] Hayleigh Crawford [Entered: 03/27/2025 04:35 PM]",
+        "entry_id": 420829134,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-27",
+        "date_modified": "2025-04-22T08:44:05.303419-07:00",
+        "entry_number": 26,
+        "description": "APPEARANCE OF COUNSEL by Bryan Davis, Jr. for State of Michigan. [1001743241] [25-1248] Bryan Davis [Entered: 03/27/2025 08:35 AM]",
+        "entry_id": 420566016,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-27",
+        "date_modified": "2025-04-22T08:44:05.283492-07:00",
+        "entry_number": 25,
+        "description": "APPEARANCE OF COUNSEL by Jonathan T. Rose for State of Vermont. [1001743178] [25-1248] Jonathan Rose [Entered: 03/27/2025 06:45 AM]",
+        "entry_id": 420566015,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-26",
+        "date_modified": "2025-04-22T08:44:05.256988-07:00",
+        "entry_number": 24,
+        "description": "APPEARANCE OF COUNSEL by Heidi Parry Stern for State of Nevada. [1001743139] [25-1248] Heidi Parry Stern [Entered: 03/26/2025 05:57 PM]",
+        "entry_id": 420566014,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-26",
+        "date_modified": "2025-04-22T08:44:05.229825-07:00",
+        "entry_number": 23,
+        "description": "APPEARANCE OF COUNSEL by Brian P. Keenan for State of Wisconsin. [1001742753] [25-1248] Brian Keenan [Entered: 03/26/2025 11:56 AM]",
+        "entry_id": 420566013,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-24",
+        "date_modified": "2025-04-22T08:44:05.203166-07:00",
+        "entry_number": 22,
+        "description": "APPEARANCE OF COUNSEL by Demian Camacho for State of California. [1001741521] [25-1248] Demian Camacho [Entered: 03/24/2025 06:27 PM]",
+        "entry_id": 420336076,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-21",
+        "date_modified": "2025-04-22T08:44:05.180189-07:00",
+        "entry_number": 21,
+        "description": "APPEARANCE OF COUNSEL by Katherine Dirks for State of Massachusetts. [1001740576] [25-1248] Katherine Dirks [Entered: 03/21/2025 08:09 PM]",
+        "entry_id": 420109965,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-21",
+        "date_modified": "2025-04-22T08:44:05.158295-07:00",
+        "entry_number": 20,
+        "description": "COURT ORDER filed denying Motion for temporary administrative stay [8]; denying Motion for stay pending appeal [8]. Copies to all parties. [1001740441] [25-1248] JSN [Entered: 03/21/2025 03:15 PM]",
+        "entry_id": 420042908,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-21",
+        "date_modified": "2025-04-22T08:44:05.137690-07:00",
+        "entry_number": 19,
+        "description": "APPEARANCE OF COUNSEL by Miranda Lea LeKander for State of California. [1001740361] [25-1248] Miranda Maison [Entered: 03/21/2025 02:11 PM]",
+        "entry_id": 420042906,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-21",
+        "date_modified": "2025-04-22T08:44:05.111201-07:00",
+        "entry_number": 18,
+        "description": "REPLY by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin to response [16], response [10], Motion for temporary administrative stay [8], Motion for stay pending appeal [8].. [1001740331] [25-1248] Steven Myers [Entered: 03/21/2025 01:33 PM]",
+        "entry_id": 420025080,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-20",
+        "date_modified": "2025-04-22T08:44:05.085809-07:00",
+        "entry_number": 17,
+        "description": "APPEARANCE OF COUNSEL by Michael K. Skold for State of Connecticut. [1001739722] [25-1248] Michael Skold [Entered: 03/20/2025 01:04 PM]",
+        "entry_id": 419888622,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-19",
+        "date_modified": "2025-04-22T08:44:05.042340-07:00",
+        "entry_number": 16,
+        "description": "RESPONSE/ANSWER by State of Maryland, State of Minnesota, District of Columbia, State of Arizona, State of California, State of Colorado, State of Connecticut, State of Delaware, State of Hawaii, State of Illinois, State of Massachusetts, State of Michigan, State of Nevada, State of New Jersey, State of New Mexico, State of New York, State of Oregon, State of Rhode Island, State of Vermont and State of Wisconsin to Motion [8], Motion [8]. Nature of response: in opposition. [1001739412] [25-1248] Virginia Williamson [Entered: 03/19/2025 04:38 PM]",
+        "entry_id": 419789088,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-19",
+        "date_modified": "2025-04-22T08:44:05.022424-07:00",
+        "entry_number": 15,
+        "description": "APPEARANCE OF COUNSEL by Stacy Chaffin for State of Oregon. [1001739109] [25-1248] Stacy Chaffin [Entered: 03/19/2025 11:50 AM]",
+        "entry_id": 419753797,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-19",
+        "date_modified": "2025-04-22T08:44:04.998993-07:00",
+        "entry_number": 14,
+        "description": "APPEARANCE OF COUNSEL by Ester Murdukhayeva for State of New York. [1001739085] [25-1248] Ester Murdukhayeva [Entered: 03/19/2025 11:26 AM]",
+        "entry_id": 419753796,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-19",
+        "date_modified": "2025-04-22T08:44:04.974625-07:00",
+        "entry_number": 13,
+        "description": "APPEARANCE OF COUNSEL by Sarah A. Hunger for State of Illinois. [1001738961] [25-1248] Sarah Hunger [Entered: 03/19/2025 09:57 AM]",
+        "entry_id": 419719842,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-18",
+        "date_modified": "2025-04-22T08:44:04.947657-07:00",
+        "entry_number": 12,
+        "description": "APPEARANCE OF COUNSEL by Nathaniel I. Levy for State of New Jersey. [1001738837] [25-1248] Nathaniel Levy [Entered: 03/18/2025 10:36 PM]",
+        "entry_id": 419707851,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-18",
+        "date_modified": "2025-04-22T08:44:04.922341-07:00",
+        "entry_number": 11,
+        "description": "APPEARANCE OF COUNSEL by David Moskowitz for State of Colorado. [1001738792] [25-1248] David Moskowitz [Entered: 03/18/2025 04:49 PM]",
+        "entry_id": 419664246,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.899170-07:00",
+        "entry_number": 10,
+        "description": "RESPONSE/ANSWER by State of Maryland, State of Minnesota, District of Columbia, State of Arizona, State of California, State of Colorado, State of Connecticut, State of Delaware, State of Hawaii, State of Illinois, State of Massachusetts, State of Michigan, State of Nevada, State of New Jersey, State of New Mexico, State of New York, State of Oregon, State of Rhode Island, State of Vermont and State of Wisconsin to Motion for temporary administrative stay [8], Motion for stay pending appeal [8]. Nature of response: in opposition. [1001738109] [25-1248] Virginia Williamson [Entered: 03/17/2025 06:45 PM]",
+        "entry_id": 419553949,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.879188-07:00",
+        "entry_number": 9,
+        "description": "APPEARANCE OF COUNSEL by Caroline S. Van Zile for District of Columbia. [1001738102] [25-1248] Caroline Van Zile [Entered: 03/17/2025 05:19 PM]",
+        "entry_id": 419538731,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.837366-07:00",
+        "entry_number": 8,
+        "description": "Emergency MOTION by Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin for temporary administrative stay,, for stay pending appeal.. Date and method of service: 03/17/2025 ecf. [1001738097] [25-1248] Steven Myers [Entered: 03/17/2025 05:15 PM]",
+        "entry_id": 419538730,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.812313-07:00",
+        "entry_number": 7,
+        "description": "APPEARANCE OF COUNSEL by Virginia A. Williamson for State of Maryland. [1001738078] [25-1248] Virginia Williamson [Entered: 03/17/2025 04:59 PM]",
+        "entry_id": 419538729,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.791455-07:00",
+        "entry_number": 6,
+        "description": "APPEARANCE OF COUNSEL by Courtney L. Dixon for Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin. [1001737885] [25-1248] Courtney Dixon [Entered: 03/17/2025 03:29 PM]",
+        "entry_id": 419519183,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.765832-07:00",
+        "entry_number": 5,
+        "description": "APPEARANCE OF COUNSEL by Mark R. Freeman for Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of Education, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin. [1001737859] [25-1248] Mark Freeman [Entered: 03/17/2025 03:16 PM]",
+        "entry_id": 419519182,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.746915-07:00",
+        "entry_number": 4,
+        "description": "APPEARANCE OF COUNSEL by Steven A. Myers for Scott Bessent, Douglas Burgum, Douglas Collins, Consumer Financial Protection Bureau, DOD, Sean Duffy, Stephen Ehikian, EPA, Charles Ezell, FDIC, General Services Administration, Pete Hegseth, HHS, Travis Hill, HUD, Robert F. Kennedy, Jr., Kelly Loefler, Howard Lutnick, Linda McMahon, Vincent N. Micone, III, National Archives and Records Administration, Kristi Noem, OPM, Brooke Rollins, Marco Rubio, SBA, Scott Turner, United States Department of Commerce, United States Department of Education, United States Department of Energy, United States Department of Homeland Security, United States Department of Labor, United States Department of the Interior, United States Department of the Treasury, United States Department of Transportation, United States Department of Veterans Affairs, USAID, USDA, Russell Vought, Christopher A. Wright and Lee M. Zeldin. [1001737819] [25-1248] Steven Myers [Entered: 03/17/2025 02:52 PM]",
+        "entry_id": 419502631,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.722138-07:00",
+        "entry_number": 3,
+        "description": "BRIEFING ORDER filed. No paper copies required unless case has been tentatively calendared or copies otherwise ordered. All filings must comply with Appendix Pagination & Brief Citation Guide. [1001737816] Opening Brief and Appendix due 04/28/2025. Response Brief due 05/27/2025. [25-1248] JSN [Entered: 03/17/2025 02:51 PM]",
+        "entry_id": 419502630,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.694641-07:00",
+        "entry_number": 2,
+        "description": "DOCKETING NOTICE issued Re: [1] case. Originating case number: 1:25-cv-00748-JKB. [1001737798] [25-1248] JSN [Entered: 03/17/2025 02:42 PM]",
+        "entry_id": 419502629,
+        "docket_id": 69746454
+    },
+    {
+        "date_filed": "2025-03-17",
+        "date_modified": "2025-04-22T08:44:04.661928-07:00",
+        "entry_number": 1,
+        "description": "Case docketed. Originating case number: 1:25-cv-00748-JKB. Case manager: JeffNeal. [1001737789] [25-1248] JSN [Entered: 03/17/2025 02:36 PM]",
+        "entry_id": 419502627,
+        "docket_id": 69746454
+    }
+]

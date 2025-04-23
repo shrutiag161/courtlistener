@@ -5,9 +5,6 @@ https://www.courtlistener.com/help/api/rest/
 
 2. Update the urls for the dockets in `docket_urls.txt`
 
-3. To add fields
-- Add fields to `docket_fields_to_include.txt` or leave it blank to get all the fields
-
 Currently, jsons will be created upon run for each docket inside `/model/jsons/`
 
 ## Work in prog!
