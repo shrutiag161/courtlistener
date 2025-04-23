@@ -17,8 +17,12 @@ class Docket:
         return dtf.format_dt(dt, new_dt_format)
 
     @property
-    def case_name(self):
+    def id(self):
         return self.json.get("id", "Not Found")
+    
+    @property
+    def case_name(self):
+        return self.json.get("case_name", "Not Found")
     
     @property
     def date_filed(self):
@@ -29,14 +33,6 @@ class Docket:
         return self.json.get("date_modified", "Not Found")
     
     @property
-    def case_name(self):
-        return self.json.get("case_name", "Not Found")
-    
-    @property
-    def assigned_to_str(self):
-        return self.json.get("assigned_to_str", "Not Found")
-    
-    @property
     def assigned_to_str(self):
         return self.json.get("assigned_to_str", "Not Found")
     
@@ -44,7 +40,10 @@ class Docket:
     def docket_number(self):
         return self.json.get("docket_number", "Not Found")
     
-    
+    @property
+    def court_id(self):
+        return self.json.get("court_id", "Not Found")
+
     
     # @property
     # def date_modified(self) -> str:
