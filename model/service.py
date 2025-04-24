@@ -6,7 +6,7 @@ DOCKET_API = "https://www.courtlistener.com/api/rest/v4/dockets/"
 ENTRIES_API = "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket="
 
 # connects to the api and returns docket/entries response jsons
-class DocketService:
+class Service:
     def __init__(self, token):
         self.__token = token
         self.session = requests.Session()
@@ -52,9 +52,8 @@ class DocketService:
     """
     Makes get request
     """
-    @staticmethod
-    def _get_response(self, url, headers):
-        response = self.session.get(url, headers=headers)
+    def _get_response(self, url):
+        response = self.session.get(url, headers=self.__headers)
         print(f"requested {url}")
         response.raise_for_status() # raises for 4xx or 5xx response
         return response
@@ -63,19 +62,19 @@ class DocketService:
     Gets json response for docket API
     """
     def get_docket_json(self, docket_url:str, *, fields:list[str]=None) -> dict:
-        docket_id = DocketService._extract_docket_id(docket_url)
-        request_url = DocketService._create_docket_request_url(docket_id, fields)
-        response = self._get_response(request_url, self.__headers)
+        docket_id = Service._extract_docket_id(docket_url)
+        request_url = Service._create_docket_request_url(docket_id, fields)
+        response = self._get_response(request_url)
         return response.json()
     
     """
     Iterates through 20 result pagination to get all entries for one docket
     """
-    def _get_all_entries(self, entries_json:dict) -> list[dict]:
+    def _fetch_all_paginated_entries(self, entries_json:dict) -> list[dict]:
         all_entries = []
         all_entries.extend(entries_json["results"])
         next_url = entries_json["next"]
-        while(next_url):
+        while next_url:
             next_response = self._get_response(next_url)
             # if next_response.status_code == 429:
             #     print("oopsies rate limited :(((")
@@ -90,11 +89,11 @@ class DocketService:
     Calls API and returns all docket entries
     """
     def get_entries(self, docket_url:str) -> list[dict]:
-        docket_id = DocketService._extract_docket_id(docket_url)
-        request_url = DocketService._create_entries_request_url(docket_id)
+        docket_id = Service._extract_docket_id(docket_url)
+        request_url = Service._create_entries_request_url(docket_id)
         response = self._get_response(request_url)
         entries_page_one_json = response.json()
-        return self._get_all_entries(entries_page_one_json)
+        return self._fetch_all_paginated_entries(entries_page_one_json)
     
     def __enter__(self):
         return self

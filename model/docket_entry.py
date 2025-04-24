@@ -1,34 +1,28 @@
 from functools import cached_property
+from typing import ClassVar
+from dataclasses import asdict, dataclass, fields
+from libs import json_util as ju
 
 # One single docket entry
+@dataclass
 class DocketEntry:
-    FIELDS_TO_EXPORT = ["id",
+    id: int
+    docket_id:int
+    date_filed: str
+    date_modified: str
+    entry_number: int
+    description: str
+    wanted_fields: ClassVar = ["id",
                         "date_filed", 
                         "date_modified",
                         "entry_number",
                         "description"]
-    def __init__(self, json:dict, docket_id:str):
-        self.json = json
-        self.docket_id = docket_id    
-
-    @staticmethod
-    def _update_entry_id(entry: dict) -> dict:
-        entry["entry_id"] = entry.pop("id")
-        return entry
     
-    @staticmethod
-    def _add_docket_id(self, entry: dict, docket_id:str) -> dict:
-        entry["docket_id"] = self.docket_id
-        return entry
+    def obj_to_dict(self) -> dict:
+        return asdict(self) # class instance -> dict (instance vars only)
 
-    def to_dict(self):
-        output = {}
-        for field in self.FIELDS_TO_EXPORT:
-            if hasattr(self, field):
-                output[field] = getattr(self, field)
-            else:
-                output[field] = self.json.get(field)
-        output = self._update_entry_id(output)
-        output = self._add_docket_id(output, self.docket_id)
-        return output
-    
+    @classmethod
+    def dict_to_obj(cls, json:dict, docket_id) -> "DocketEntry":
+        shortened_json = ju.simplify_json(json, cls.wanted_fields)
+        docketified_json = ju.add_field(shortened_json, "docket_id", docket_id)
+        return cls(**docketified_json)

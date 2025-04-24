@@ -1,10 +1,10 @@
 {
     "id": 69714275,
     "case_name": "State of Maryland v. United States Department of Agriculture",
-    "date_modified": "Thursday Apr 17 at 06 PM CDT",
+    "date_modified": "2025-04-23T10:25:55.163036-07:00",
     "date_filed": "2025-03-06",
     "assigned_to_str": "James K. Bredar",
     "docket_number": "1:25-cv-00748",
     "court_id": "mdd",
-    "appeal_from": null
+    "is_appeal": false
 }
