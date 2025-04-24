@@ -6,15 +6,6 @@ import logging
 import sys
 import json
 
-# rate limiting
-# pathlib
-
-# explain the service api code
-# is docket processor necessary 
-# fetch or get
-# should rate limiting go in _fetch_all_paginated_entries or _get_response
-# do files i import have to be classes
-
 DOCKET_URLS_FILE = "docket_urls.txt"
 TOKEN_FILE = "token.txt"
 OUTPUT_DIR = "./model/jsons/"

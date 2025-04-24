@@ -1,15 +1,15 @@
+import time
 import requests
 from urllib.parse import urlparse
-
-DOCKET_API = "https://www.courtlistener.com/api/rest/v4/dockets/"
-# ENTRIES_API = "https://www.courtlistener.com/api/rest/v4/docket-entries/?order_by=date_filed&docket="
-ENTRIES_API = "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket="
 
 # connects to the api and returns docket/entries response jsons
 class Service:
     def __init__(self, token):
         self.__token = token
         self.session = requests.Session()
+        self.base_api_url = "https://www.courtlistener.com/api/rest/v4"
+        self.docket_api_url = f"{self.base_api_url}/dockets"
+        self.entries_api_url = f"{self.base_api_url}/docket-entries/?docket="
         self.__headers = {
             'Authorization': f'Token {self.__token}',
         }
@@ -34,9 +34,8 @@ class Service:
     """
     Creates API req url for one docket info
     """
-    @staticmethod
-    def _create_docket_request_url(docket_id, fields=None):
-        request_url = DOCKET_API + docket_id
+    def _build_docket_request_url(self, docket_id, fields=None):
+        request_url = self.docket_api_url + docket_id
         if fields:
             fields_str = ",".join(fields)
             request_url = f"{request_url}?fields={fields_str}" 
@@ -45,25 +44,29 @@ class Service:
     """
     Creates API req url for a docket's entries (all entries)
     """
-    @staticmethod
-    def _create_entries_request_url(docket_id):
-        return ENTRIES_API + docket_id
+    def _build_entries_request_url(self, docket_id):
+        return self.entries_api_url + docket_id
     
     """
     Makes get request
     """
     def _get_response(self, url):
-        response = self.session.get(url, headers=self.__headers)
-        print(f"requested {url}")
-        response.raise_for_status() # raises for 4xx or 5xx response
-        return response
+        while True:
+            response = self.session.get(url, headers=self.__headers)
+            print(f"requested {url}")
+            if response.status_code == 429:
+                print("too many reqs - you're going to make court listener mad :(")
+                time.sleep(3)
+                continue
+            response.raise_for_status() # raises for 4xx or 5xx response
+            return response
     
     """
-    Gets json response for docket API
+    Makes get request to retreieve API's docket json
     """
-    def get_docket_json(self, docket_url:str, *, fields:list[str]=None) -> dict:
+    def fetch_docket_json(self, docket_url:str, *, fields:list[str]=None) -> dict:
         docket_id = Service._extract_docket_id(docket_url)
-        request_url = Service._create_docket_request_url(docket_id, fields)
+        request_url = Service._build_docket_request_url(docket_id, fields)
         response = self._get_response(request_url)
         return response.json()
     
@@ -88,9 +91,9 @@ class Service:
     """
     Calls API and returns all docket entries
     """
-    def get_entries(self, docket_url:str) -> list[dict]:
+    def fetch_entries(self, docket_url:str) -> list[dict]:
         docket_id = Service._extract_docket_id(docket_url)
-        request_url = Service._create_entries_request_url(docket_id)
+        request_url = Service._build_entries_request_url(docket_id)
         response = self._get_response(request_url)
         entries_page_one_json = response.json()
         return self._fetch_all_paginated_entries(entries_page_one_json)
